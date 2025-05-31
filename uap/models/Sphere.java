@@ -19,14 +19,6 @@ public class Sphere extends Shape implements ThreeDimensional, PiRequired, MassC
         this.radius = radius;
     }
 
-    public double getRadius() {
-        return radius;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
     @Override
     public double getVolume() {
         return (4.0 / 3.0) * PI * this.radius * this.radius * this.radius;
@@ -39,7 +31,6 @@ public class Sphere extends Shape implements ThreeDimensional, PiRequired, MassC
 
     @Override
     public double getMass() {
-
         return DENSITY * getSurfaceArea() * THICKNESS;
     }
 
@@ -58,7 +49,6 @@ public class Sphere extends Shape implements ThreeDimensional, PiRequired, MassC
     @Override
     public double calculateCost() {
         double massInKg = gramToKilogram();
-        // perhitungan biaya kirim dihitung per kg dengan angka bulat, dibulatkan ke atas bila angka kg tidak bulat
         return Math.ceil(massInKg) * PRICE_PER_KG;
     }
 }

@@ -21,37 +21,18 @@ public class Torus extends Shape implements ThreeDimensional, PiRequired, MassCa
         this.minorRadius = minorRadius;
     }
 
-    public double getMajorRadius() {
-        return majorRadius;
-    }
-
-    public void setMajorRadius(double majorRadius) {
-        this.majorRadius = majorRadius;
-    }
-
-    public double getMinorRadius() {
-        return minorRadius;
-    }
-
-    public void setMinorRadius(double minorRadius) {
-        this.minorRadius = minorRadius;
-    }
-
     @Override
     public double getVolume() {
-        // V = 2 * pi^2 * R * r^2
         return 2 * PI * PI * this.majorRadius * this.minorRadius * this.minorRadius;
     }
 
     @Override
     public double getSurfaceArea() {
-        // A = 4 * pi^2 * R * r
         return 4 * PI * PI * this.majorRadius * this.minorRadius;
     }
 
     @Override
     public double getMass() {
-        // m = rho * A * t
         return DENSITY * getSurfaceArea() * THICKNESS;
     }
 
@@ -70,7 +51,6 @@ public class Torus extends Shape implements ThreeDimensional, PiRequired, MassCa
     @Override
     public double calculateCost() {
         double massInKg = gramToKilogram();
-        // perhitungan biaya kirim dihitung per kg dengan angka bulat, dibulatkan ke atas bila angka kg tidak bulat
         return Math.ceil(massInKg) * PRICE_PER_KG;
     }
 }
