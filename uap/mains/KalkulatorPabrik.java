@@ -12,6 +12,7 @@ public class KalkulatorPabrik {
 
     // Metode utama yang akan dijalankan saat program dimulai
     public static void main(String[] args) {
+        System.out.println("============================================="); 
         System.out.println("Kalkulator Pabrik Cetakan Donat Rumahan");
         System.out.println("MUHAMMAD IHSAN FADILLAH"); 
         System.out.println("245150700111023");           
